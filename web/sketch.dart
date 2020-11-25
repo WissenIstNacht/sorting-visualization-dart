@@ -1,17 +1,29 @@
 import 'dart:html';
-import 'main.dart';
+import 'StateManager.dart';
 
 class Sketch {
   num GAME_SPEED;
   num _lastTimeStamp = 0;
+  CanvasElement canvas;
+  CanvasRenderingContext2D ctx;
+  StateManager s;
+  String background = '#DEDEDE';
 
-  Sketch(double framerate) {
+  Sketch(this.canvas, double framerate) {
     GAME_SPEED = 1000 / framerate;
     init();
   }
 
   void init() {
-    //TODO:
+    canvas.width = 600;
+    canvas.height = 400;
+    ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'DarkRed';
+    ctx.fillRect(0, 0, 600, 133);
+    ctx.fillStyle = '#DEDEDE';
+    ctx.fillRect(0, 133, 600, 133);
+    ctx.fillStyle = 'navy';
+    ctx.fillRect(0, 266, 600, 133);
   }
 
   Future run() async {
@@ -23,9 +35,9 @@ class Sketch {
 
     if (diff > GAME_SPEED) {
       _lastTimeStamp = delta;
-      clearCanvas();
+      // clearCanvas();
       // if (s.is_running) {
-      //   s.sorter.step();
+      // s.sorter.step();
       // }
     }
     run();
