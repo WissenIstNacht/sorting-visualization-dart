@@ -21,8 +21,8 @@ class Sketch {
 
     if (diff > GAME_SPEED) {
       _lastTimeStamp = delta;
-      _clearCanvas();
       if (s.is_running) {
+        _clearCanvas();
         s.sorter.step();
       }
     }

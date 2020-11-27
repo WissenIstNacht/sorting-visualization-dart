@@ -31,26 +31,23 @@ class StateManager {
 
   // The following methods change the page's state
   void idle2run() {
-    //TODO check if this retrieves value correctly.
-    var numb_Elements = _tf_arraySize.value;
     // if text field is empty when run is pressed, visualization falls back to default
     // of 10 elemensts.
-    numb_Elements = numb_Elements.isEmpty ? 10 : numb_Elements;
+    var size_input = _tf_arraySize.value;
+    var numb_Elements = size_input.isEmpty ? 10 : int.parse(size_input);
 
-    sorter = InsertionSort(10);
-    //TODO check if this retrieves value correctly.
-    // var algo_type = _dd_form.value;
-    // switch (algo_type) {
-    //   case 'bubbleSort':
-    //     sorter = BubbleSort(numb_Elements);
-    //     break;
-    //   case 'insertionSort':
-    //     // sorter = InsertionSort(numb_Elements)
-    //     break;
-    //   default:
-    //     //TODO deal with inexistent value
-    //     break;
-    // }
+    var algo_type = _dd_form.value;
+    switch (algo_type) {
+      case 'bubbleSort':
+        sorter = BubbleSort(numb_Elements);
+        break;
+      case 'insertionSort':
+        sorter = InsertionSort(numb_Elements);
+        break;
+      default:
+        //TODO deal with inexistent value
+        break;
+    }
     _state = 1;
     _b_reset.disabled = false;
     is_running = true;
@@ -74,14 +71,12 @@ class StateManager {
     is_running = false;
     _b_reset.disabled;
     _b_run.text = 'Run';
-    // background('white'); //
   }
 
   // // The following methods determine the next state based on the user input and
   // // the current state.
 
   void pressedRun() {
-    print('Works?');
     switch (_state) {
       case 0:
         idle2run();

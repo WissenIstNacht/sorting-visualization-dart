@@ -40,8 +40,6 @@ class InsertionSort extends SortingAlgorithm {
         break;
       case 2:
         // comparison mode - compared element either green/red, depending on correctness.
-        print(a);
-        print(a[index]);
         if (a[index - 1] > a[index]) {
           var se1 = ArrayElement(index, Color.blue.code);
           var se2 = ArrayElement(index - 1, Color.red.code);
@@ -56,21 +54,18 @@ class InsertionSort extends SortingAlgorithm {
         }
         break;
       case 3:
-        print(a);
-        print(a[index]);
         //confirmation mode - compared elements are in correct order.
         a = swap(a, index, index - 1);
 
         var se1 = ArrayElement(index, Color.green.code);
         var se2 = ArrayElement(index - 1, Color.green.code);
-        render(se1, se2);
         action = 0;
         index--;
         break;
       default:
         break;
     }
-    if (done) {
+    if (done || index == 0) {
       highest++;
       index = highest;
       done = false;
