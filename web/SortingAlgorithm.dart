@@ -10,8 +10,9 @@ import 'main.dart';
 
 abstract class SortingAlgorithm {
   List<int> a;
-  int index, action = 0;
-  int lowest, size;
+  int action = 0, sortedIndex = 0;
+  int index, size;
+  bool direction; //determines which side of sorted index is green/gray.
 
   void step();
 
@@ -39,11 +40,16 @@ abstract class SortingAlgorithm {
         ctx.fillStyle = special_elem1.color;
       } else if (k == special_elem2.index) {
         ctx.fillStyle = special_elem2.color;
-      } else if (k >= lowest) {
-        ctx.fillStyle = Color.green.code;
       } else {
-        ctx.fillStyle = Color.gray.code;
+        if (direction && k < sortedIndex) {
+          ctx.fillStyle = Color.green.code;
+        } else if (!direction && k >= sortedIndex) {
+          ctx.fillStyle = Color.green.code;
+        } else {
+          ctx.fillStyle = Color.gray.code;
+        }
       }
+
       var rect_x = canvas.width / 20 + k * (r + 1) * unit;
       var rect_h = map(a[k].toDouble(), 1, size.toDouble(), canvas.height / 20,
           9 * canvas.height / 10);

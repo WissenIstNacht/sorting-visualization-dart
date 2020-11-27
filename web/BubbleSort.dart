@@ -15,7 +15,9 @@ class BubbleSort extends SortingAlgorithm {
   // I.e., lowest == l - i, where i are the passes starting at 0.
   BubbleSort(arrayLength) {
     size = arrayLength;
-    lowest = size;
+    sortedIndex = size;
+    direction = false;
+    index = 0;
 
     a = List.generate(size, (int index) => index + 1);
     a.shuffle();
@@ -65,9 +67,9 @@ class BubbleSort extends SortingAlgorithm {
       default:
         break;
     }
-    if (index == lowest - 1) {
+    if (index == sortedIndex - 1) {
       index = 0;
-      lowest--;
+      sortedIndex--;
     }
   }
 }

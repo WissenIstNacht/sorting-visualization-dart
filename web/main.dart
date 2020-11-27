@@ -4,21 +4,20 @@ import 'sketch.dart';
 
 CanvasElement canvas;
 CanvasRenderingContext2D ctx;
-// Map<String, String> colors = {
-//   'gray': '#DEDEDE',
-//   'red': '#ff98b2',
-//   'green': '#98ffcc',
-//   'blue': '#98e5ff',
-// };
 
 void main() {
   canvas = querySelector('#canvasHolder');
   ctx = canvas.getContext('2d');
   canvas.height = 400;
   canvas.width = 600;
-  ctx.scale(1, -1);
-  ctx.translate(0, -canvas.height);
-  ctx.lineWidth = 2;
+  ctx
+    ..scale(1, -1)
+    ..translate(0, -canvas.height);
+  ctx
+    ..lineWidth = 2
+    ..fillStyle = Color.gray.code
+    ..fillRect(0, 0, canvas.width, canvas.height)
+    ..strokeRect(0, 0, canvas.width, canvas.height);
   Sketch(2.0).run();
 }
 

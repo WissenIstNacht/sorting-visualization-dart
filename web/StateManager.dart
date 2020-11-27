@@ -39,6 +39,7 @@ class StateManager {
     var algo_type = _dd_form.value;
     switch (algo_type) {
       case 'bubbleSort':
+        print('works?');
         sorter = BubbleSort(numb_Elements);
         break;
       case 'insertionSort':

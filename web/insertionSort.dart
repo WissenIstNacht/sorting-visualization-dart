@@ -10,15 +10,14 @@ import 'sortingAlgorithm.dart';
  */
 
 class InsertionSort extends SortingAlgorithm {
-  int highest = 1;
   bool done = false;
 
   InsertionSort(arrayLength) {
     size = arrayLength;
-    highest = 1;
     index = 1;
     action = 0;
-    lowest = 0;
+    direction = true;
+    sortedIndex = 1;
 
     a = List.generate(size, (int index) => index + 1);
     a.shuffle();
@@ -59,6 +58,7 @@ class InsertionSort extends SortingAlgorithm {
 
         var se1 = ArrayElement(index, Color.green.code);
         var se2 = ArrayElement(index - 1, Color.green.code);
+        render(se1, se2);
         action = 0;
         index--;
         break;
@@ -66,8 +66,7 @@ class InsertionSort extends SortingAlgorithm {
         break;
     }
     if (done || index == 0) {
-      highest++;
-      index = highest;
+      index = sortedIndex++;
       done = false;
     }
   }
