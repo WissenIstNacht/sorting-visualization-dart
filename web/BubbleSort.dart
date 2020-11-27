@@ -6,7 +6,7 @@
  * series of steps that can be visualized.
  */
 
-import 'SortingAlgorithm.dart';
+import 'sortingAlgorithm.dart';
 import 'main.dart';
 
 class BubbleSort extends SortingAlgorithm {
@@ -15,12 +15,10 @@ class BubbleSort extends SortingAlgorithm {
   // I.e., lowest == l - i, where i are the passes starting at 0.
   BubbleSort(arrayLength) {
     size = arrayLength;
+    lowest = size;
+
     a = List.generate(size, (int index) => index + 1);
     a.shuffle();
-
-    lowest = size;
-    index = 0;
-    action = 0;
   }
 
   /** Strepwise implementation of bubblesort algorithm
@@ -35,20 +33,20 @@ class BubbleSort extends SortingAlgorithm {
         break;
       case 1:
         //selection mode - selected element colored blue.
-        var special_elem = ArrayElement(index, colors['blue']);
+        var special_elem = ArrayElement(index, Color.blue.code);
         render(special_elem, null);
         action = 2;
         break;
       case 2:
         // comparison mode - compared element either green/red, depending on correctness.
         if (a[index] > a[index + 1]) {
-          var se1 = ArrayElement(index, colors['blue']);
-          var se2 = ArrayElement(index + 1, colors['red']);
+          var se1 = ArrayElement(index, Color.blue.code);
+          var se2 = ArrayElement(index + 1, Color.red.code);
           render(se1, se2);
           action = 3;
         } else {
-          var se1 = ArrayElement(index, colors['blue']);
-          var se2 = ArrayElement(index + 1, colors['green']);
+          var se1 = ArrayElement(index, Color.blue.code);
+          var se2 = ArrayElement(index + 1, Color.green.code);
           render(se1, se2);
           action = 0;
           index++;
@@ -58,8 +56,8 @@ class BubbleSort extends SortingAlgorithm {
         //confirmation mode - compared elements are in correct order.
         a = swap(a, index, index + 1);
 
-        var se1 = ArrayElement(index, colors['green']);
-        var se2 = ArrayElement(index + 1, colors['green']);
+        var se1 = ArrayElement(index, Color.green.code);
+        var se2 = ArrayElement(index + 1, Color.green.code);
         render(se1, se2);
         action = 0;
         index++;

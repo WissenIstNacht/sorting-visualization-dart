@@ -1,7 +1,8 @@
 import 'dart:html';
 
-import 'BubbleSort.dart';
-import 'SortingAlgorithm.dart';
+import 'insertionSort.dart';
+import 'bubbleSort.dart';
+import 'sortingAlgorithm.dart';
 
 /**
  * @author WissenIstNacht
@@ -36,7 +37,7 @@ class StateManager {
     // of 10 elemensts.
     numb_Elements = numb_Elements.isEmpty ? 10 : numb_Elements;
 
-    sorter = BubbleSort(10);
+    sorter = InsertionSort(10);
     //TODO check if this retrieves value correctly.
     // var algo_type = _dd_form.value;
     // switch (algo_type) {

@@ -4,23 +4,14 @@
  *
  * This file contains a super class that provide generic code for implementing a sorting
  * algorithm visualization.  
- *
  */
 
 import 'main.dart';
 
 abstract class SortingAlgorithm {
   List<int> a;
-  int size, lowest, action, index;
-
-  // SortingAlgorithm(this.size) {
-  //   a = List.generate(size, (int index) => index++);
-  //   a.shuffle();
-
-  //   lowest = size;
-  //   index = 0;
-  //   action = 0;
-  // }
+  int index, action = 0;
+  int lowest, size;
 
   void step();
 
@@ -49,9 +40,9 @@ abstract class SortingAlgorithm {
       } else if (k == special_elem2.index) {
         ctx.fillStyle = special_elem2.color;
       } else if (k >= lowest) {
-        ctx.fillStyle = colors['green'];
+        ctx.fillStyle = Color.green.code;
       } else {
-        ctx.fillStyle = colors['gray'];
+        ctx.fillStyle = Color.gray.code;
       }
       var rect_x = canvas.width / 20 + k * (r + 1) * unit;
       var rect_h = map(a[k].toDouble(), 1, size.toDouble(), canvas.height / 20,
@@ -60,15 +51,6 @@ abstract class SortingAlgorithm {
       ctx.fillRect(rect_x, rect_y, rect_w, rect_h);
       ctx.strokeRect(rect_x, rect_y, rect_w, rect_h);
     }
-  }
-
-  double map(
-      double value, double from_a, double from_b, double to_a, double to_b) {
-    var centered_value = value - from_a;
-    var from_delta = from_b - from_a;
-    var to_delta = to_b - to_a;
-    var ratio = to_delta * centered_value / from_delta;
-    return ratio + to_a;
   }
 }
 

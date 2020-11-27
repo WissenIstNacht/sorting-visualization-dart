@@ -9,7 +9,7 @@ class Sketch {
 
   Sketch(double framerate) {
     GAME_SPEED = 1000 / framerate;
-    ctx.fillStyle = colors['gray'];
+    ctx.fillStyle = Color.gray.code;
   }
 
   Future run() async {
