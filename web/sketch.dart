@@ -1,39 +1,39 @@
-import 'dart:html';
-import 'StateManager.dart';
-import 'main.dart';
+// import 'dart:html';
+// import 'StateManager.dart';
+// import 'main.dart';
 
-class Sketch {
-  num _lastTimeStamp = 0;
-  StateManager s = StateManager();
-  num GAME_SPEED;
+// class Sketch {
+//   num _lastTimeStamp = 0;
+//   StateManager s = StateManager();
+//   num GAME_SPEED;
 
-  Sketch(double framerate) {
-    GAME_SPEED = 1000 / framerate;
-    ctx.fillStyle = Color.gray.code;
-  }
+//   Sketch(double framerate) {
+//     GAME_SPEED = 1000 / framerate;
+//     ctx.fillStyle = Color.gray.code;
+//   }
 
-  Future run() async {
-    update(await window.animationFrame);
-  }
+//   Future run() async {
+//     update(await window.animationFrame);
+//   }
 
-  void update(num delta) {
-    final diff = delta - _lastTimeStamp;
+//   void update(num delta) {
+//     final diff = delta - _lastTimeStamp;
 
-    if (diff > GAME_SPEED) {
-      _lastTimeStamp = delta;
-      if (s.is_running) {
-        _clearCanvas();
-        s.sorter.step();
-      }
-    }
-    run();
-  }
+//     if (diff > GAME_SPEED) {
+//       _lastTimeStamp = delta;
+//       if (true) {
+//         _clearCanvas();
+//         s.sorter.step();
+//       }
+//     }
+//     run();
+//   }
 
-  void _clearCanvas() {
-    ctx
-      ..fillStyle = 'white'
-      ..fillRect(0, 0, canvas.width, canvas.height)
-      ..strokeStyle = 'black'
-      ..strokeRect(0, 0, canvas.width, canvas.height);
-  }
-}
+//   void _clearCanvas() {
+//     ctx
+//       ..fillStyle = 'white'
+//       ..fillRect(0, 0, canvas.width, canvas.height)
+//       ..strokeStyle = 'black'
+//       ..strokeRect(0, 0, canvas.width, canvas.height);
+//   }
+// }

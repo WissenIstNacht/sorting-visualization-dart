@@ -14,6 +14,7 @@ class BubbleSort extends SortingAlgorithm {
   // i-th rightest index. Lowest denotes the currently lowest correctly placed element.
   // I.e., lowest == l - i, where i are the passes starting at 0.
   BubbleSort(arrayLength) {
+    ctx = canvas.context2D;
     size = arrayLength;
     sortedIndex = size;
     direction = false;

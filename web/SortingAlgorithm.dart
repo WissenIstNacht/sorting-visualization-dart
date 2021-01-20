@@ -6,6 +6,8 @@
  * algorithm visualization.  
  */
 
+import 'dart:html';
+
 import 'main.dart';
 
 abstract class SortingAlgorithm {
@@ -13,6 +15,24 @@ abstract class SortingAlgorithm {
   int action = 0, sortedIndex = 0;
   int index, size;
   bool direction; //determines which side of sorted index is green/gray.
+
+  final CanvasElement canvas = querySelector('#canvasHolder');
+  CanvasRenderingContext2D ctx;
+
+  SortingAlgorithm() {
+    ctx = canvas.context2D;
+    canvas.width = 600;
+    canvas.height = 400;
+
+    ctx
+      ..scale(1, -1)
+      ..translate(0, -canvas.height);
+    ctx
+      ..lineWidth = 2
+      ..fillStyle = Color.gray.code
+      ..fillRect(0, 0, canvas.width, canvas.height)
+      ..strokeRect(0, 0, canvas.width, canvas.height);
+  }
 
   void step();
 
@@ -25,6 +45,8 @@ abstract class SortingAlgorithm {
   /// @param {ArrayElement} special_elem1 First highlighted element
   /// @param {ArrayElement} special_elem2 Second highlighted element
   void render([ArrayElement special_elem1, ArrayElement special_elem2]) {
+    clearCanvas();
+
     // get indices if there are special elements to highlight.
     special_elem1 ??= ArrayElement.none();
     special_elem2 ??= ArrayElement.none();
@@ -57,6 +79,14 @@ abstract class SortingAlgorithm {
       ctx.fillRect(rect_x, rect_y, rect_w, rect_h);
       ctx.strokeRect(rect_x, rect_y, rect_w, rect_h);
     }
+  }
+
+  void clearCanvas() {
+    ctx
+      ..fillStyle = 'white'
+      ..fillRect(0, 0, canvas.width, canvas.height)
+      ..strokeStyle = 'black'
+      ..strokeRect(0, 0, canvas.width, canvas.height);
   }
 }
 
