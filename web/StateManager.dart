@@ -3,8 +3,8 @@ import 'dart:html';
 import 'animation_loop.dart';
 // import 'insertionSort.dart';
 // import 'bubbleSort.dart';
-import 'bubbleSort.dart';
-import 'sortingAlgorithm.dart';
+import 'BubbleSort.dart';
+import 'SortingAlgorithm.dart';
 import 'state.dart';
 
 class StateManager {

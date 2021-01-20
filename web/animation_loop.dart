@@ -17,7 +17,6 @@ class AnimationLoop {
       final diff = delta - _lastTimeStamp;
       if (diff > _animation_speed) {
         _lastTimeStamp = delta;
-        print('stepping');
         update();
       }
     }

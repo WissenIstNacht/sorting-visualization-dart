@@ -6,8 +6,7 @@
  * series of steps that can be visualized.
  */
 
-import 'sortingAlgorithm.dart';
-import 'main.dart';
+import 'SortingAlgorithm.dart';
 
 class BubbleSort extends SortingAlgorithm {
   // After pass i, the largest element of the unsorted part is guaranteed to be at the
