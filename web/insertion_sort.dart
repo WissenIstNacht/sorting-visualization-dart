@@ -1,5 +1,5 @@
-import 'bubbleSort.dart';
-import 'sortingAlgorithm.dart';
+import 'bubble_sort.dart';
+import 'sorting_algorithm.dart';
 
 /**
  * @author WissenIstNacht

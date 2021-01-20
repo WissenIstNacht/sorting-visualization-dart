@@ -1,7 +1,7 @@
 import 'dart:html';
 
 import 'animation_loop.dart';
-import 'SortingAlgorithm.dart';
+import 'sorting_algorithm.dart';
 
 abstract class State {
   SortingAlgorithm sketch;
