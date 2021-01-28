@@ -6,25 +6,15 @@
  * algorithm visualization.  
  */
 
-import 'dart:html';
+import 'sketch.dart';
 
-abstract class SortingAlgorithm {
+abstract class SortingAlgorithm extends Sketch {
   List<int> a;
   int action = 0, sortedIndex = 0;
   int index, size;
   bool direction; //determines which side of sorted index is green/gray.
 
-  final CanvasElement canvas = querySelector('#canvasHolder');
-  CanvasRenderingContext2D ctx;
-
   SortingAlgorithm() {
-    ctx = canvas.context2D;
-    canvas.width = 600;
-    canvas.height = 400;
-
-    ctx
-      ..scale(1, -1)
-      ..translate(0, -canvas.height);
     clearCanvas();
   }
 
@@ -75,15 +65,6 @@ abstract class SortingAlgorithm {
         ..lineWidth = 2
         ..strokeRect(rect_x, rect_y, rect_w, rect_h);
     }
-  }
-
-  void clearCanvas() {
-    ctx
-      ..fillStyle = 'white'
-      ..fillRect(0, 0, canvas.width, canvas.height)
-      ..strokeStyle = 'black'
-      ..lineWidth = 2
-      ..strokeRect(1, 1, canvas.width - 2, canvas.height - 2);
   }
 }
 

@@ -3,6 +3,7 @@ import 'dart:html';
 import 'bubble_sort.dart';
 import 'insertion_sort.dart';
 import 'main.dart';
+import 'sketch.dart';
 import 'sorting_algorithm.dart';
 
 abstract class State {
@@ -14,14 +15,13 @@ class InitialState extends State {
   Sketch s = Sketch();
 
   @override
-  void update() {}
+  void update() {
+    s.welcomeMessage("Press 'Run' to start the animation");
+  }
 
   @override
   State next(String arg) {
-    print('entering "next"');
-    StartingState new_state = StartingState('s');
-    print('creating new state: $new_state');
-    return new_state;
+    return StartingState('s');
   }
 }
 
@@ -36,8 +36,6 @@ class StartingState extends State {
   @override
   void update() {
     var new_size = int.parse(_size.value);
-    print('This is the new size: $new_size');
-    // var new_mode;
     switch (_mode.value) {
       case 'bubbleSort':
         new_mode = BubbleSort(new_size);
@@ -48,7 +46,6 @@ class StartingState extends State {
       default:
         new_mode = BubbleSort(new_size);
     }
-    print(new_mode);
     s.changeState('');
   }
 
@@ -116,7 +113,8 @@ class ResettingState extends State {
   @override
   void update() {
     loop.stop();
-    sketch.clearCanvas();
+    // sketch.clearCanvas();
+    sketch.welcomeMessage("Press 'Run' to start the animation");
     run.text = 'Run';
   }
 
