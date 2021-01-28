@@ -12,7 +12,6 @@
 </head>
 
 <body class="body">
-  <p id='output'> Visualizing various sorting algorithms.</p>
   <div data-collapse="medium" data-animation="over-right" data-duration="400" role="banner" class="navbar w-nav">
     <div class="w-nav-button" style="-webkit-user-select: text;" aria-label="menu"
       role="button" tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false">
@@ -75,19 +74,20 @@
       <p>This page visualizes how various sorting algorithm work.</p>
       <h3>BubbleSort</h3>
       <p>
-        Bubblesort works in passes through the structure that holds elements. Durin a
-        pass the algorithm starts at one end works its way through each position of the
-        structure. At each position, it tests whether the current element and its
-        neighbour are correctly ordered. If that is not the case, the elements are
-        swapped.
+        Bubblesort works by repeatedly passing through the structure that holds the
+        elements that are to be sorted. During a pass, the algorithm starts at one end
+        and works its way through each position of the structure. At each position, it
+        tests whether the current element and its (right) neighbor are correctly ordered.
+        If that is not the case, the elements are swapped.
       </p>
       <p>
-        Note that after the first pass, the largest element will be at the very right,
-        where it belongs. This is true, because at each position, the larger of both
-        elements is swapped. At some point during the first pass, the largest element must
-        be swapped with some neighbour. And the again, until it reaches the end. This
-        procedure is the repeated. I.e., after the second pass, the second largest element
-        is correctly placed as second to last element on the right.
+        Note that after the first pass, the largest element will be at the very right -
+        where it belongs. This is true because it was there from the beginning, or,
+        because at each position the larger of two elements ended up on the right after
+        comparison. This logic can be extended throughout the passes. I.e., after the
+        second pass, the second largest element is correctly placed as the second to last
+        element on the right. Then the third largest and so on, until everything is
+        ordered. 
       </p>
       <p>
         This notion of letting the largest elements incrementally rise to their correct
@@ -95,12 +95,7 @@
         "bubble up" through the array.
       </p>
       <h3>InsertionSort</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt erat vel
-        lacus scelerisque gravida. Cras eros enim, lobortis at condimentum at, pretium vel
-        ante. Quisque tincidunt nunc tellus, vel porta mauris aliquam a. Nam sodales, nisl
-        nec malesuada tincidunt, tellus turpis lacinia tellus, ut posuere enim sapien eget
-        nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi porta ante
-        est, ut vulputate quam molestie nec. Aliquam erat volutpat. </p>
+      <p>Coming soon </p>
     </div>
   </div>
   <div class="section-4">
