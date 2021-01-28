@@ -6,6 +6,12 @@ import 'main.dart';
 import 'sketch.dart';
 import 'sorting_algorithm.dart';
 
+/// The state manager works with states.
+///
+/// The abstract class [State] contains two abstract method that the state manager is
+/// programmed to call. Implementing these methods in subclasses will drive the state
+/// machine from one state to the next and update the application's state depending on
+///  that new state.
 abstract class State {
   State next(String arg);
   void update();

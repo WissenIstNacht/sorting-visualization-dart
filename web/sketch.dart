@@ -1,5 +1,8 @@
 import 'dart:html';
 
+/// Basic wrapper around canvas and drawing context.
+///
+/// Provides utility methods that are used in several places throughout the app.
 class Sketch {
   final CanvasElement canvas = querySelector('#canvasHolder');
   CanvasRenderingContext2D ctx;
@@ -14,6 +17,9 @@ class Sketch {
       ..translate(0, -canvas.height);
   }
 
+  /// Displays a message.
+  ///
+  /// The specified message is displayed in gray in the center of a blank canvas.
   void welcomeMessage(String message) {
     clearCanvas();
     ctx
@@ -28,6 +34,9 @@ class Sketch {
       ..scale(1, -1);
   }
 
+  /// Produces a blank canvas.
+  ///
+  /// The cleared canvas contains nothing but a white background and a black border.
   void clearCanvas() {
     ctx
       ..fillStyle = 'white'
