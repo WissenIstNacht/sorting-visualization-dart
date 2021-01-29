@@ -1,6 +1,7 @@
 import 'dart:html';
 
-import 'animation_loop.dart';
+import 'package:animation_loop/animation_loop.dart';
+
 import 'state.dart';
 import 'state_manager.dart';
 
