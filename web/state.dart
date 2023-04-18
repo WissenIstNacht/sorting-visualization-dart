@@ -1,5 +1,7 @@
 import 'dart:html';
 
+import 'package:animation_loop/animation_loop.dart';
+
 import 'bubble_sort.dart';
 import 'insertion_sort.dart';
 import 'main.dart';
@@ -68,6 +70,7 @@ class RunningState extends State {
 
   @override
   void update() {
+    loop = AnimationLoop(framerate);
     loop.run(sketch.step);
     run.text = 'Pause';
   }
