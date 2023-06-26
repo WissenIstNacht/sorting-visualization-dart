@@ -1,0 +1,122 @@
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.02rem;
+}
+
+button {
+  padding: 10px 1.5rem;
+  background-color: #dedede;
+  border: 0;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ccc;
+}
+
+button:active {
+  background-color: #999;
+}
+
+button:focus {
+  outline: 1px solid #999;
+}
+
+input,
+select {
+  width: 100%;
+  height: 38px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+
+input::-moz-placeholder,
+select::-moz-placeholder {
+  color: #999;
+}
+
+input:-ms-input-placeholder,
+select:-ms-input-placeholder {
+  color: #999;
+}
+
+input::-webkit-input-placeholder,
+select::-webkit-input-placeholder {
+  color: #999;
+}
+
+input:focus,
+select:focus {
+  border-color: #999;
+  outline: transparent;
+}
+
+input[disabled],
+select[disabled],
+input[readonly],
+select[readonly],
+fieldset[disabled] input,
+fieldset[disabled] select {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+}
+
+@media (prefers-color-scheme: dark) {
+  button {
+    background-color: var(--nord7);
+    color: var(--nord0);
+  }
+
+  button:hover {
+    background-color: #73abaa;
+  }
+
+  button:active {
+    background-color: #568f8e;
+  }
+
+  button:focus {
+    outline: 2px solid #3f6968;
+  }
+
+  input,
+  select {
+    color: var(--nord6);
+    background-color: var(--nord2);
+    border-color: var(--nord3);
+  }
+
+  input:focus,
+  select:focus {
+    border-color: var(--nord7);
+    outline: 0;
+  }
+
+  input::-moz-placeholder,
+  select::-moz-placeholder {
+    color: var(--nord4);
+  }
+
+  input:-ms-input-placeholder,
+  select:-ms-input-placeholder {
+    color: var(--nord4);
+  }
+
+  input::-webkit-input-placeholder,
+  select::-webkit-input-placeholder {
+    color: var(--nord4);
+  }
+}

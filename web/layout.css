@@ -1,0 +1,106 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+
+section {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid;
+  background-color: #ddd;
+  height: 115px;
+}
+
+header {
+  text-align: center;
+  padding-block: 20px 10px;
+}
+
+section + section {
+  border-top: solid 1px;
+  margin-top: 20px;
+}
+
+* + label {
+  margin-top: 0.75rem;
+}
+
+#buttonRow {
+  padding-top: 1rem;
+  gap: 1rem;
+}
+
+.flexRow {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.visualizationHolder {
+  padding: 0.75rem 1rem;
+}
+
+#headSec {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#mainWrapper {
+  max-width: 940px;
+  margin-inline: auto;
+  padding-bottom: 40px;
+}
+
+#canvasHolder {
+  flex: 3;
+  aspect-ratio: 3 / 2;
+}
+
+#controlsContainer {
+  flex: 1;
+  /* necessary for variable button sizes due to runtime text change */
+  min-width: 220px;
+}
+
+canvas {
+  background-color: #ddd;
+  border: solid 1px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--nord6);
+    background: var(--nord0);
+  }
+
+  footer {
+    background-color: var(--nord2);
+    border-color: var(--nord4);
+  }
+}

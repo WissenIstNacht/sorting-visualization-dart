@@ -34,7 +34,7 @@ class InitialState extends State {
 }
 
 class StartingState extends State {
-  final SelectElement _mode = querySelector('#dd_mode');
+  final SelectElement _mode = querySelector('#dd_form');
   final InputElement _size = querySelector('#tf_arraySize');
   SortingAlgorithm new_mode;
   String st;
@@ -43,18 +43,35 @@ class StartingState extends State {
 
   @override
   void update() {
+    final descriptions = querySelectorAll('.description');
+
     var new_size = int.parse(_size.value);
     switch (_mode.value) {
       case 'bubbleSort':
         new_mode = BubbleSort(new_size);
+        for (var i = 0; i < descriptions.length; i++) {
+          _hideItem(descriptions[i], 'bubbleSortDescription');
+        }
         break;
       case 'insertionSort':
+        for (var i = 0; i < descriptions.length; i++) {
+          _hideItem(descriptions[i], 'insertionSortDescription');
+        }
         new_mode = InsertionSort(new_size);
         break;
       default:
         new_mode = BubbleSort(new_size);
     }
     s.changeState('');
+  }
+
+  void _hideItem(Element el, String descriptionType) {
+    var isSelected = el.id == descriptionType;
+    if (isSelected) {
+      el.removeAttribute('hidden');
+    } else {
+      el.setAttribute('hidden', 'true');
+    }
   }
 
   @override

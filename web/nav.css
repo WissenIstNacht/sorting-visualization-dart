@@ -1,0 +1,14 @@
+#myBanner {
+  background: #dddddd;
+  border-bottom: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+}
+
+@media (prefers-color-scheme: dark) {
+  #myBanner {
+    background: var(--nord2);
+    border-color: var(--nord4);
+  }
+}
